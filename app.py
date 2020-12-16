@@ -50,7 +50,7 @@ def respond():
 
 @app.route('/set_webhook', methods=['GET', 'POST'])
 def set_webhook():
-    s = bot.setWebhook('https://a673c8ae6990.ngrok.io')
+    s = bot.setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN))
     if s:
         return "webhook setup ok"
     else:
@@ -63,5 +63,4 @@ def index():
 
 if __name__ == '__main__':
     app.run(threaded=True)
-
 
