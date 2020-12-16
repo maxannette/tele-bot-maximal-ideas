@@ -1,7 +1,9 @@
 import re
+from time import sleep
 from flask import Flask, request
 import telegram
-from tele_bot.credentials import bot_token, bot_user_name, URL
+from tele_bot.ai import generate_smart_reply
+from tele_bot.credentials import bot_token, bot_user_name,URL
 
 
 global bot
@@ -58,7 +60,7 @@ def set_webhook():
 
 @app.route('/')
 def index():
-    return '.'
+    return 'Done'
 
 
 if __name__ == '__main__':
